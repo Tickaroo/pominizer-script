@@ -28,7 +28,7 @@ You could also override `GROUP_ID` and `VERSION_ID` in each modules `gradle.prop
 So a typically setup of a multi module project looks like this:
 ```
    - root
-        gradle.properties ( containing GROUP_ID, VERSION_NAME )
+          gradle.properties ( containing GROUP_ID, VERSION_NAME )
      
         - libA 
               gradle.properties ( containing ARTIFACT_ID = "bla" )
