@@ -10,11 +10,9 @@ afterEvaluate { project ->
         pom.groupId = project.GROUP_ID
         pom.version = project.VERSION_NAME
 
-        try {
+        if (project.hasProperty('ARTIFACT_ID')) {
           pom.artifactId = project.ARTIFACT_ID
-        } catch(Exception e) {
-          // No property, so do nothing, TODO: find out how to check with if statement --> ugly hack
-        }
+        } 
 
         pom.whenConfigured { pom ->
           pom.dependencies.findAll { dep -> dep.groupId == rootProject.name }.collect { dep ->
