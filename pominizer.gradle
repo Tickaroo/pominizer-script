@@ -1,0 +1,24 @@
+afterEvaluate {
+  uploadArchives {
+    repositories {
+      mavenDeployer {
+
+        repository(url: "file://$System.env.MVN_REPO_PATH")
+
+        pom.groupId = project.GROUP_ID
+        pom.version = project.VERSION_NAME
+
+        if (project.ARTIFACT_ID != null){
+          pom.artifactId = project.ARTIFACT_ID
+        }
+
+        pom.whenConfigured { pom ->
+          pom.dependencies.findAll { dep -> dep.groupId == rootProject.name }.collect { dep ->
+            dep.groupId = pom.groupId = project.GROUP
+            dep.version = pom.version = project.VERSION_NAME
+          }
+        }
+      }
+    }
+  }
+}
