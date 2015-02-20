@@ -8,7 +8,7 @@ afterEvaluate {
         pom.groupId = project.GROUP_ID
         pom.version = project.VERSION_NAME
 
-        if (project.ARTIFACT_ID != null){
+        if (project.hasProperty('ARTIFACT_ID')){
           pom.artifactId = project.ARTIFACT_ID
         }
 
