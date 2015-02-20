@@ -3,7 +3,7 @@ This script resolves inner module dependencies (i.e. module A depends on module 
 
 ## Usage
 ```groovy
-apply from: 'https://github.com/tickaroo/pomizer-script/blob/master/pominizer.gradle'
+apply from: 'https://raw.githubusercontent.com/Tickaroo/pominizer-script/master/pominizer.gradle'
 ```
 
 ## Define POM properties
