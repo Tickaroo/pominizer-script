@@ -10,8 +10,10 @@ afterEvaluate { project ->
         pom.groupId = project.GROUP_ID
         pom.version = project.VERSION_NAME
 
-        if (project.hasProperty('ARTIFACT_ID')){
+        try {
           pom.artifactId = project.ARTIFACT_ID
+        } catch(Exception e) {
+          // No property, so do nothing, TODO: find out how to check with if statement --> ugly hack
         }
 
         pom.whenConfigured { pom ->
