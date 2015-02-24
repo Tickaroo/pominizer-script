@@ -23,7 +23,8 @@ afterEvaluate { project ->
       }
     }
   }
-  
+ 
+ /* 
   task androidJavadocs(type: Javadoc) {
         source = android.sourceSets.main.java.srcDirs
         classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
@@ -33,6 +34,8 @@ afterEvaluate { project ->
       classifier = 'javadoc'
       from androidJavadocs.destinationDir
   }
+  
+  */
 
   task androidSourcesJar(type: Jar) {
       classifier = 'sources'
@@ -41,6 +44,6 @@ afterEvaluate { project ->
 
   artifacts {
       archives androidSourcesJar
-      archives androidJavadocsJar
+      // archives androidJavadocsJar
   }
 }
